@@ -13,6 +13,7 @@ class XProvider extends ChangeNotifier {
 
   addCount() {
     count++;
+
     notifyListeners();
   }
 

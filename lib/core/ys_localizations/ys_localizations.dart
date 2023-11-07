@@ -31,7 +31,7 @@ class YsLocalizations {
   }
 
 // Init
-  static String defaultLanguageCode = 'en';
+  static String defaultLanguageCode = 'ar';
   static String translateSourceType = 'asset'; //map - asset
   static List<String> supportedLanguagesCode = const ['en', 'ar'];
   static List<String> supportedCountryCode = [];

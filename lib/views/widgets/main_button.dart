@@ -1,6 +1,5 @@
+import 'package:almotamayez/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
-
-import '../../core/constants/app_colors.dart';
 
 class MainButton extends StatelessWidget {
   final void Function()? onPressed;
@@ -18,7 +17,7 @@ class MainButton extends StatelessWidget {
     this.onPressed,
     this.expanded = true,
     this.radius = 12,
-    this.color = AppColors.yPrimaryColor,
+    this.color,
     this.elevation,
     this.verticalPadding = 16,
     this.horizontalPadding,
@@ -38,8 +37,8 @@ class MainButton extends StatelessWidget {
                 horizontalPadding != null ? VisualDensity.minimumDensity : 0.0,
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(radius),
-          ),
+              borderRadius: BorderRadius.circular(radius),
+              side: BorderSide(color: AppColors.yblueColor)),
           backgroundColor: color,
         ),
         onPressed: onPressed,
