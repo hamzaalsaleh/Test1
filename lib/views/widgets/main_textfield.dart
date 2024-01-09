@@ -20,6 +20,7 @@ class MainTextField extends StatefulWidget {
   final OutlineInputBorder? border;
   final Color? filledColor;
   final Color? borderColor;
+  final Color? focusecolor;
   final bool enable;
   final void Function(String value)? onSubmit;
   final bool unfocusWhenTapOutside;
@@ -54,6 +55,7 @@ class MainTextField extends StatefulWidget {
     this.onChanged,
     this.controller,
     this.validator,
+    this.focusecolor,
   });
 
   @override
@@ -107,7 +109,8 @@ class MainTextFieldState extends State<MainTextField> {
             _border(color: widget.borderColor ?? AppColors.yPrimaryColor),
         enabledBorder:
             _border(color: widget.borderColor ?? AppColors.yPrimaryColor),
-        focusedBorder: _border(color: AppColors.yPrimaryColor),
+        focusedBorder:
+            _border(color: widget.focusecolor ?? AppColors.yPrimaryColor),
         errorBorder: _border(color: AppColors.yRedColor),
         fillColor: widget.filledColor ?? AppColors.yLightWhiteColor,
         filled: true,

@@ -1,7 +1,7 @@
 import 'package:almotamayez/core/helper/functions/navigation_service.dart';
 import 'package:almotamayez/core/ys_localizations/saved_language_code.dart';
 import 'package:almotamayez/core/ys_localizations/ys_localizations.dart';
-import 'package:almotamayez/views/pages/test/test_page.dart';
+import 'package:almotamayez/views/pages/welcome/splash/splash_sreen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
@@ -37,7 +37,7 @@ class YsLocalizationsProvider extends ChangeNotifier {
     state?.popUntil((route) => route.isFirst);
     await Future.delayed(const Duration(milliseconds: 50), () async {
       state!.pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => const TestPage()),
+          MaterialPageRoute(builder: (context) => const SplashSreen()),
           (route) => false);
     });
   }

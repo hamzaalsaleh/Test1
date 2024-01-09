@@ -7,22 +7,20 @@ import 'package:almotamayez/views/widgets/onbording/custom_dot.dart';
 import 'package:almotamayez/views/widgets/onbording/slider.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Mybording extends StatelessWidget {
+  const Mybording({super.key});
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    Onbordingcontroller controller = Provider.of<Onbordingcontroller>(context);
     return Scaffold(
       appBar: AppBar(
         actions: [
           IconButton(
             padding: 20.hEdge,
-            onPressed: () {},
+            onPressed: () {
+              controller.skip();
+            },
             icon: const Text(
               "تخطي",
               style: TextStyle(
@@ -57,7 +55,7 @@ class _HomeState extends State<Home> {
                         value.currentpage == 0 || value.currentpage == 1
                             ? "التالي"
                             : "لنبدأ",
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ),

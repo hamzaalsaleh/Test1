@@ -6,8 +6,8 @@ class MainText extends StatelessWidget {
     this.text, {
     super.key,
     this.color = Colors.black,
-    this.fontSize = 12,
-    this.fontWeight,
+    this.fontSize = 16,
+    this.fontWeight = FontWeight.bold,
     this.fontFamily,
     this.textAlign,
     this.textDirection,
@@ -31,8 +31,8 @@ class MainText extends StatelessWidget {
   const MainText.pageTitle(
     this.text, {
     super.key,
-    this.color = AppColors.ySecondryColor,
-    this.fontSize = 32,
+    this.color = AppColors.yBlackColor,
+    this.fontSize = 24,
     this.fontWeight = FontWeight.w600,
     this.fontFamily,
     this.textAlign,
@@ -47,8 +47,8 @@ class MainText extends StatelessWidget {
     this.text, {
     super.key,
     this.color = AppColors.yBlackColor,
-    this.fontSize = 16,
-    this.fontWeight = FontWeight.w600,
+    this.fontSize = 18,
+    this.fontWeight = FontWeight.bold,
     this.fontFamily,
     this.textAlign,
     this.textDirection,
@@ -61,7 +61,7 @@ class MainText extends StatelessWidget {
   const MainText.textButton(
     this.text, {
     super.key,
-    this.color = AppColors.yPrimaryColor,
+    this.color = AppColors.yBlackColor,
     this.fontSize = 12,
     this.fontWeight = FontWeight.w600,
     this.fontFamily,
@@ -78,7 +78,7 @@ class MainText extends StatelessWidget {
     super.key,
     this.color,
     this.fontSize = 16,
-    this.fontWeight = FontWeight.w700,
+    this.fontWeight = FontWeight.bold,
     this.fontFamily,
     this.textAlign,
     this.textDirection,
@@ -92,8 +92,8 @@ class MainText extends StatelessWidget {
     this.text, {
     super.key,
     this.color = Colors.black54,
-    this.fontSize = 14,
-    this.fontWeight = FontWeight.w400,
+    this.fontSize = 16,
+    this.fontWeight = FontWeight.bold,
     this.fontFamily,
     this.textAlign,
     this.textDirection,
@@ -107,8 +107,8 @@ class MainText extends StatelessWidget {
     this.text, {
     super.key,
     this.color = Colors.black54,
-    this.fontSize = 12,
-    this.fontWeight = FontWeight.w400,
+    this.fontSize = 14,
+    this.fontWeight = FontWeight.bold,
     this.fontFamily,
     this.textAlign,
     this.textDirection,
@@ -123,7 +123,7 @@ class MainText extends StatelessWidget {
     super.key,
     this.color = Colors.white,
     this.fontSize = 16,
-    this.fontWeight = FontWeight.w600,
+    this.fontWeight = FontWeight.bold,
     this.fontFamily,
     this.textAlign,
     this.textDirection,
