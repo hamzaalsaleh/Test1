@@ -11,8 +11,8 @@ import 'package:almotamayez/views/widgets/main_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +25,7 @@ class Login extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              16.hSize,
               const MainText.pageTitle("تسجيل الدخول"),
               20.hSize,
               Image.asset("assets/images/logoo.png")
@@ -41,6 +42,7 @@ class Login extends StatelessWidget {
                     borderRadius: 10.cBorder, color: AppColors.ytranspare),
                 child: const IntlPhoneField(
                   disableLengthCheck: true,
+                  textAlign: TextAlign.start,
                   decoration: InputDecoration(
                     border: UnderlineInputBorder(borderSide: BorderSide.none),
                   ),

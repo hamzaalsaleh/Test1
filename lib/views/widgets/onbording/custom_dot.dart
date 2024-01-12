@@ -4,17 +4,17 @@ import 'package:almotamayez/models/onbording_model.dart';
 import 'package:almotamayez/providers/onbording_controller.dart';
 import 'package:flutter/material.dart';
 
-class CustomDot extends StatelessWidget {
-  const CustomDot({super.key});
+class IndecatorWidget extends StatelessWidget {
+  const IndecatorWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<Onbordingcontroller>(
+    return Consumer<OnbordingController>(
       builder: (context, value, child) => Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ...List.generate(
-            onbordinglist.length,
+            onbordingList.length,
             (index) => AnimatedContainer(
               margin: const EdgeInsets.all(2),
               duration: const Duration(

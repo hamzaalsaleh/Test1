@@ -6,14 +6,17 @@ import 'package:almotamayez/views/pages/auth/login_page.dart';
 
 import 'package:flutter/material.dart';
 
-class Onbordingcontroller with ChangeNotifier {
+class OnbordingController with ChangeNotifier {
   int currentpage = 0;
   late PageController pageController;
+  OnbordingController() {
+    pageController = PageController();
+  }
 
   next() {
     currentpage++;
-    if (currentpage > onbordinglist.length - 1) {
-      AppRoutes.routeRemoveAllTo(NavigationService.context, const Login());
+    if (currentpage > onbordingList.length - 1) {
+      AppRoutes.routeRemoveAllTo(NavigationService.context, const LoginPage());
     } else {
       pageController.animateToPage(currentpage,
           duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
@@ -24,7 +27,7 @@ class Onbordingcontroller with ChangeNotifier {
 
   back() {
     currentpage--;
-    if (currentpage > onbordinglist.length - 1) {
+    if (currentpage > onbordingList.length - 1) {
       LocalData.sharedPref.setString("step", '1');
     } else {
       pageController.animateToPage(currentpage,
@@ -34,16 +37,12 @@ class Onbordingcontroller with ChangeNotifier {
   }
 
   skip() {
-    AppRoutes.routeRemoveAllTo(NavigationService.context, const Login());
+    AppRoutes.routeRemoveAllTo(NavigationService.context, const LoginPage());
   }
 
-  onpagechenged(int index) {
+  onPageChenged(int index) {
     currentpage = index;
 
     notifyListeners();
-  }
-
-  Onbordingcontroller() {
-    pageController = PageController();
   }
 }

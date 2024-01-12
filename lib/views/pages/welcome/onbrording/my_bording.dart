@@ -1,6 +1,7 @@
 import 'package:almotamayez/core/constants/app_colors.dart';
 import 'package:almotamayez/core/helper/extensions/assetss_widgets.dart';
 import 'package:almotamayez/core/ys_localizations/ys_localizations_provider.dart';
+import 'package:almotamayez/models/onbording_model.dart';
 import 'package:almotamayez/providers/onbording_controller.dart';
 import 'package:almotamayez/views/widgets/main_button.dart';
 import 'package:almotamayez/views/widgets/onbording/custom_dot.dart';
@@ -12,7 +13,7 @@ class Mybording extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Onbordingcontroller controller = Provider.of<Onbordingcontroller>(context);
+    OnbordingController controller = Provider.of<OnbordingController>(context);
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -24,16 +25,17 @@ class Mybording extends StatelessWidget {
             icon: const Text(
               "تخطي",
               style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.ytitlegrey,
-                  fontSize: 16),
+                fontWeight: FontWeight.bold,
+                color: AppColors.ytitlegrey,
+                fontSize: 14,
+              ),
             ),
           ),
         ],
       ),
-      body: Consumer<Onbordingcontroller>(
+      body: Consumer<OnbordingController>(
         builder: (context, value, child) => Container(
-          padding: 20.hEdge,
+          padding: 16.hEdge,
           child: Column(
             children: [
               const Expanded(
@@ -44,31 +46,35 @@ class Mybording extends StatelessWidget {
                 flex: 1,
                 child: Column(
                   children: [
-                    const CustomDot(),
-                    30.hSize,
+                    const Spacer(),
+                    const IndecatorWidget(),
+                    const Spacer(),
                     MainButton(
                       color: AppColors.yblueColor,
                       onPressed: () {
                         value.next();
                       },
                       child: Text(
-                        value.currentpage == 0 || value.currentpage == 1
+                        value.currentpage != onbordingList.length - 1
                             ? "التالي"
                             : "لنبدأ",
                         style: const TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    10.hSize,
-                    if (value.currentpage == 0 || value.currentpage == 1)
+                    16.hSize,
+                    if (value.currentpage != 0 &&
+                        value.currentpage != onbordingList.length - 1)
                       MainButton(
-                          onPressed: () {
-                            value.back();
-                          },
-                          child: const Text(
-                            "رجوع",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ))
+                        onPressed: () {
+                          value.back();
+                        },
+                        child: const Text(
+                          "رجوع",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    const Spacer(),
                   ],
                 ),
               ),

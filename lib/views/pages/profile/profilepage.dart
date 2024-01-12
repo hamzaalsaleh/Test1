@@ -4,7 +4,7 @@ import 'package:almotamayez/core/constants/app_strings.dart';
 import 'package:almotamayez/core/helper/extensions/assetss_widgets.dart';
 import 'package:almotamayez/core/helper/functions/show_dialog.dart';
 import 'package:almotamayez/core/ys_localizations/ys_localizations_provider.dart';
-import 'package:almotamayez/views/profile/langpage.dart';
+import 'package:almotamayez/views/pages/profile/langpage.dart';
 import 'package:almotamayez/views/widgets/main_text.dart';
 import 'package:almotamayez/views/widgets/profile/customcardprofil.dart';
 import 'package:flutter/material.dart';

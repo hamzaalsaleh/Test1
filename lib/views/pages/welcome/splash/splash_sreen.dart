@@ -14,11 +14,13 @@ class _SplashSreenState extends State<SplashSreen> {
   @override
   void initState() {
     super.initState();
-    nav();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      nav();
+    });
   }
 
-  nav() async {
-    await AppRoutes.routeRemoveTo(context, const Mybording(), delayMS: 2000);
+  nav() {
+    AppRoutes.routeRemoveTo(context, const Mybording(), delayMS: 2000);
   }
 
   @override

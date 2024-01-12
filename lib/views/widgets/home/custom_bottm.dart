@@ -1,4 +1,5 @@
 import 'package:almotamayez/core/constants/app_colors.dart';
+import 'package:almotamayez/core/helper/extensions/assetss_widgets.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomAppBar extends StatelessWidget {
@@ -17,21 +18,29 @@ class CustomBottomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onpressed,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            iconData,
-            color: active == true ? AppColors.yblueColor : AppColors.yGreyColor,
-          ),
-          Text(
-            text,
-            style: TextStyle(
+      shape: RoundedRectangleBorder(
+        borderRadius: 100.cBorder,
+      ),
+      child: Padding(
+        padding: 6.vEdge,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              iconData,
               color:
                   active == true ? AppColors.yblueColor : AppColors.yGreyColor,
             ),
-          ),
-        ],
+            Text(
+              text,
+              style: TextStyle(
+                color: active == true
+                    ? AppColors.yblueColor
+                    : AppColors.yGreyColor,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

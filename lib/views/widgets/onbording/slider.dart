@@ -15,38 +15,46 @@ class CustomSlider extends StatefulWidget {
 class _CustomSliderState extends State<CustomSlider> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<Onbordingcontroller>(
+    return Consumer<OnbordingController>(
       builder: (context, val, child) => PageView.builder(
           controller: val.pageController,
           onPageChanged: (value) {
-            val.onpagechenged(value);
+            val.onPageChenged(value);
           },
-          itemCount: onbordinglist.length,
+          itemCount: onbordingList.length,
           itemBuilder: (context, i) => Column(
                 children: [
                   20.hSize,
                   Image.asset(
-                    onbordinglist[i].image!,
-                    fit: BoxFit.fill,
+                    onbordingList[i].image ?? '',
+                    fit: BoxFit.cover,
                   ),
-                  20.hSize,
-                  Text(
-                    onbordinglist[i].title!,
-                    style: const TextStyle(
-                        fontSize: 24, fontWeight: FontWeight.bold),
+                  48.hSize,
+                  Column(
+                    children: [
+                      Text(
+                        onbordingList[i].title ?? '',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      24.hSize,
+                      Container(
+                        alignment: Alignment.center,
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          onbordingList[i].body ?? '',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.ytitlegrey,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   10.hSize,
-                  Container(
-                    alignment: Alignment.center,
-                    child: Text(
-                      textAlign: TextAlign.center,
-                      onbordinglist[i].body!,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.ytitlegrey,
-                          fontSize: 18),
-                    ),
-                  )
                 ],
               )),
     );

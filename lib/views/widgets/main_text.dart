@@ -32,7 +32,7 @@ class MainText extends StatelessWidget {
     this.text, {
     super.key,
     this.color = AppColors.yBlackColor,
-    this.fontSize = 24,
+    this.fontSize = 20,
     this.fontWeight = FontWeight.w600,
     this.fontFamily,
     this.textAlign,

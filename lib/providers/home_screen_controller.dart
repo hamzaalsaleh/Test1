@@ -1,7 +1,7 @@
-import 'package:almotamayez/views/favoraite/favorite.dart';
+import 'package:almotamayez/views/pages/favoraite/favorite.dart';
 import 'package:almotamayez/views/pages/chat.dart';
 import 'package:almotamayez/views/pages/home/home_page.dart';
-import 'package:almotamayez/views/profile/profilepage.dart';
+import 'package:almotamayez/views/pages/profile/profilepage.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreenController with ChangeNotifier {

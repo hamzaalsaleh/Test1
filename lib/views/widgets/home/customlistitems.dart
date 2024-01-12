@@ -12,26 +12,26 @@ class CustomListItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        ...List.generate(
-            4,
-            (index) => Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 5),
-                      height: 80,
-                      width: 80,
-                      decoration: BoxDecoration(
-                        borderRadius: 50.cBorder,
-                        border: Border.all(),
-                      ),
-                      child: SvgPicture.asset(AppStrings.image1),
-                    ),
-                    5.hSize,
-                    const MainText.heading("نقل الأثاث")
-                  ],
-                )),
-      ],
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: List.generate(
+        4,
+        (index) => Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 5),
+              height: 80,
+              width: 80,
+              decoration: BoxDecoration(
+                borderRadius: 50.cBorder,
+                border: Border.all(),
+              ),
+              child: SvgPicture.asset(AppStrings.image1),
+            ),
+            5.hSize,
+            const MainText.heading("نقل الأثاث")
+          ],
+        ),
+      ),
     );
   }
 }

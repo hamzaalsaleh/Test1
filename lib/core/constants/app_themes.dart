@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 class AppThemes {
   static ThemeData get theme {
     return ThemeData(
-      colorScheme: ColorScheme.fromSeed(seedColor: AppColors.toString()),
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: AppColors.yPrimaryColor,
+      ),
       useMaterial3: true,
       fontFamily: 'Almarai',
     );

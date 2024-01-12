@@ -1,37 +1,48 @@
 import 'package:flutter/material.dart';
 
 class AppRoutes {
-  static Future<void> routeTo(BuildContext context, Widget page,
+  static Future<T?> routeTo<T extends Object?>(
+      BuildContext context, Widget page,
       {int delayMS = 0}) async {
-    Future.delayed(Duration(milliseconds: delayMS), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+    T? t;
+    await Future.delayed(Duration(milliseconds: delayMS), () async {
+      t = await Navigator.push(
+          context, MaterialPageRoute(builder: (context) => page));
     });
+    return t;
   }
 
-  static Future<void> routeRemoveTo(BuildContext context, Widget page,
+  static Future<T?> routeRemoveTo<T extends Object?>(
+      BuildContext context, Widget page,
       {int delayMS = 0}) async {
-    Future.delayed(Duration(milliseconds: delayMS), () {
-      Navigator.pushReplacement(
+    T? t;
+    await Future.delayed(Duration(milliseconds: delayMS), () async {
+      t = await Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => page),
       );
     });
+    return t;
   }
 
-  static Future<void> routeRemoveAllTo(BuildContext context, Widget page,
+  static Future<T?> routeRemoveAllTo<T extends Object?>(
+      BuildContext context, Widget page,
       {int delayMS = 0}) async {
-    Future.delayed(Duration(milliseconds: delayMS), () {
-      Navigator.pushAndRemoveUntil(
+    T? t;
+    await Future.delayed(Duration(milliseconds: delayMS), () async {
+      t = await Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(builder: (context) => page),
         (route) => false,
       );
     });
+    return t;
   }
 
-  static Future<void> pop(BuildContext context, {int delayMS = 0}) async {
-    Future.delayed(Duration(milliseconds: delayMS), () {
-      Navigator.pop(context);
+  static Future pop<T extends Object?>(BuildContext context,
+      {int delayMS = 0, T? result}) async {
+    await Future.delayed(Duration(milliseconds: delayMS), () async {
+      Navigator.pop(context, result);
     });
   }
 }

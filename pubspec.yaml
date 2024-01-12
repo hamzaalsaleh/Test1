@@ -50,7 +50,7 @@ flutter:
   assets:
     - assets/lang/
     - assets/images/
-    - assets/svgs/
+    # - assets/svgs/
 
   fonts:
     # - family: Poppins
@@ -76,9 +76,9 @@ flutter:
     - family: Almarai
       fonts:
         - asset: assets/fonts/Almarai/Almarai-Bold.ttf
-          weight: 100
+          weight: 700
         - asset: assets/fonts/Almarai/Almarai-ExtraBold.ttf
-          weight: 200
+          weight: 900
         - asset: assets/fonts/Almarai/Almarai-Light.ttf
           weight: 300
         - asset: assets/fonts/Almarai/Almarai-Regular.ttf

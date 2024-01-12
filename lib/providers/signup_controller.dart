@@ -7,6 +7,7 @@ import '../core/helper/functions/navigation_service.dart';
 class SignupController with ChangeNotifier {
   login() {}
   gotologin() {
-    AppRoutes.routeRemoveAllTo(NavigationService.context, const Login());
+    AppRoutes.routeRemoveAllTo(
+        NavigationService.context, const LoginPage());
   }
 }

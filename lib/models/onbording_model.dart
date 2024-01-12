@@ -7,7 +7,7 @@ class OnbordingModel {
   OnbordingModel({this.title, this.body, this.image});
 }
 
-List<OnbordingModel> onbordinglist = [
+List<OnbordingModel> onbordingList = [
   OnbordingModel(
       title: "سرعة في الانجاز",
       body:
@@ -20,7 +20,10 @@ List<OnbordingModel> onbordinglist = [
       image: AppStrings.imagetow),
   OnbordingModel(
       title: "سرعة في الانجاز",
-      body:
-          "سرعة في الانجاز سرعة في الانجاز سرعة في الانجاز سرعة في الانجاز سرعة في الانجاز سرعة في الانجازسرعة في الانجاز سرعة في الانجاز سرعة في الانجاز",
+      body: "سرعة في الانجاز سرعة في الانجاز سرعة ",
+      image: AppStrings.imagethree),
+  OnbordingModel(
+      title: "سرعة في الانجاز",
+      body: "سرعة في الانجاز سرعة في الانجاز سرعة ",
       image: AppStrings.imagethree),
 ];

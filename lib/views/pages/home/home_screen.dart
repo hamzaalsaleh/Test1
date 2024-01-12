@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
       builder: (context, value, child) => Scaffold(
         body: value.listpage.elementAt(value.currentpage),
         bottomNavigationBar: BottomAppBar(
-          height: 70,
+          height: 80,
           child: Row(
             children: [
               ...List.generate(value.listpage.length + 1, (index) {

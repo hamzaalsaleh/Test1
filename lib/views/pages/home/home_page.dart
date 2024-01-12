@@ -1,7 +1,7 @@
 import 'package:almotamayez/core/constants/app_routes.dart';
 import 'package:almotamayez/core/helper/extensions/assetss_widgets.dart';
 import 'package:almotamayez/views/pages/home/main_services.dart';
-import 'package:almotamayez/views/pages/home/sub-services.dart';
+import 'package:almotamayez/views/pages/home/sub_services.dart';
 import 'package:almotamayez/views/widgets/home/custominfo.dart';
 import 'package:almotamayez/views/widgets/home/customlistitems.dart';
 import 'package:almotamayez/views/widgets/home/customnotefication.dart';
@@ -20,46 +20,65 @@ class HomePage extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        body: ListView(
-          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const CustomNotefication(),
-                  const CustomInfo(),
-                  10.hSize,
-                  const CustomSearch(),
-                  20.hSize,
-                  const MainText.title("العروض الخاصة"),
-                  10.hSize,
-                  const CustomOffers(),
-                  20.hSize,
-                  CustomTitleAndMore(
-                    title: "الخدمات الرئيسية",
-                    head: "عرض المزيد",
-                    ontap: () {
-                      AppRoutes.routeTo(context, const MainServices());
-                    },
-                  ),
-                  20.hSize,
-                  const CustomListItems(),
-                  20.hSize,
-                  CustomTitleAndMore(
-                    title: "الخدمات الأكثر طلباً",
-                    head: "عرض المزيد",
-                    ontap: () {
-                      AppRoutes.routeTo(context, const SubServices());
-                    },
-                  )
-                ],
+        body: SafeArea(
+          child: Column(
+            children: [
+              Padding(
+                padding: 16.hEdge,
+                child: Column(
+                  children: [
+                    const CustomNotefication(),
+                    const CustomInfo(),
+                    10.hSize,
+                    const CustomSearch(),
+                    10.hSize,
+                  ],
+                ),
               ),
-            ),
-            10.hSize,
-            const CustomOrders(),
-          ],
+              Expanded(
+                child: ListView(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          10.hSize,
+                          const MainText.title("العروض الخاصة"),
+                          10.hSize,
+                          const CustomOffers(),
+                          20.hSize,
+                          CustomTitleAndMore(
+                            title: "الخدمات الرئيسية",
+                            head: "عرض المزيد",
+                            ontap: () {
+                              AppRoutes.routeTo(context, const MainServices());
+                            },
+                          ),
+                          20.hSize,
+                          const CustomListItems(),
+                          20.hSize,
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: 16.hEdge,
+                      child: CustomTitleAndMore(
+                        title: "الخدمات الأكثر طلباً",
+                        head: "عرض المزيد",
+                        ontap: () {
+                          AppRoutes.routeTo(context, const SubServices());
+                        },
+                      ),
+                    ),
+                    10.hSize,
+                    const CustomOrders(),
+                    16.hSize,
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

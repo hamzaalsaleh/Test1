@@ -17,18 +17,19 @@ class CustomOrders extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 340,
-      child: ListView.separated(
+      child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        separatorBuilder: (context, index) => const SizedBox(
-          width: 5,
-        ),
         itemCount: 2,
         itemBuilder: (context, index) {
           return Container(
             height: 340,
+            margin: 8.hEdge,
             decoration: BoxDecoration(
-                borderRadius: 8.cBorder,
-                border: Border.all(color: AppColors.yGreyColor)),
+              borderRadius: 8.cBorder,
+              border: Border.all(
+                color: AppColors.yGreyColor,
+              ),
+            ),
             child: Column(
               children: [
                 Stack(
@@ -52,29 +53,28 @@ class CustomOrders extends StatelessWidget {
                           ),
                         )),
                     Positioned(
-                        right: 150,
-                        top: 100,
-                        child: Container(
-                          padding: 5.aEdge,
-                          decoration: BoxDecoration(
-                              color: AppColors.yWhiteColor,
-                              borderRadius: 20.cBorder,
-                              border: Border.all(color: Colors.transparent)),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const MainText.title(
-                                "4.5",
-                              ),
-                              5.wSize,
-                              const Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 25,
-                              )
-                            ],
-                          ),
-                        ))
+                      right: 150,
+                      top: 100,
+                      child: Container(
+                        padding: 5.aEdge,
+                        decoration: BoxDecoration(
+                            color: AppColors.yWhiteColor,
+                            borderRadius: 20.cBorder,
+                            border: Border.all(color: Colors.transparent)),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const MainText.title("4.5"),
+                            5.wSize,
+                            const Icon(
+                              Icons.star_rounded,
+                              color: Colors.yellow,
+                              size: 25,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 5.hSize,
@@ -83,9 +83,7 @@ class CustomOrders extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const MainText.title(
-                        "نقل الأثاث الاثاث",
-                      ),
+                      const MainText.title("نقل الأثاث الاثاث"),
                       5.hSize,
                       const MainText.heading(
                         "الخدمات الأكثر طلباً طلباً \nطلباً طلباً",
@@ -115,8 +113,8 @@ class CustomOrders extends StatelessWidget {
                   },
                   color: AppColors.yblueColor,
                   radius: 8,
-                  child: const MainText.buttonText("اطلب الآنِ"),
-                )
+                  child: const MainText.buttonText('اطلب الآن'),
+                ),
               ],
             ),
           );

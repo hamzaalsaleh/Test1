@@ -1,6 +1,6 @@
 import 'package:almotamayez/core/constants/app_routes.dart';
 import 'package:almotamayez/core/helper/functions/navigation_service.dart';
-import 'package:almotamayez/views/pages/auth/forget_password.dart';
+import 'package:almotamayez/views/pages/auth/forget_password_page.dart';
 import 'package:almotamayez/views/pages/auth/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +11,6 @@ class LoginController with ChangeNotifier {
   }
 
   gotoforgetpassword() {
-    AppRoutes.routeTo(NavigationService.context, const ForgetPassword());
+    AppRoutes.routeTo(NavigationService.context, const ForgetPasswordPage());
   }
 }

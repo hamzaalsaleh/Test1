@@ -1,10 +1,9 @@
+import 'package:almotamayez/core/constants/app_colors.dart';
 import 'package:almotamayez/core/constants/app_routes.dart';
 import 'package:almotamayez/core/constants/app_strings.dart';
 import 'package:almotamayez/core/helper/extensions/assetss_widgets.dart';
 import 'package:almotamayez/views/widgets/main_text.dart';
 import 'package:flutter/material.dart';
-
-import '../../../core/constants/app_colors.dart';
 
 class SubServices extends StatelessWidget {
   const SubServices({super.key});

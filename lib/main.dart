@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => YsLocalizationsProvider()),
         ChangeNotifierProvider(create: (context) => RemoteData()),
         ChangeNotifierProvider(create: (context) => XProvider()),
-        ChangeNotifierProvider(create: (context) => Onbordingcontroller()),
+        ChangeNotifierProvider(create: (context) => OnbordingController()),
         ChangeNotifierProvider(create: (context) => LoginController()),
         ChangeNotifierProvider(create: (context) => SignupController()),
         ChangeNotifierProvider(create: (context) => HomeScreenController()),
