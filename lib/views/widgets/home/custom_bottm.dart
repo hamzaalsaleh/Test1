@@ -14,6 +14,7 @@ class CustomBottomAppBar extends StatelessWidget {
   final IconData iconData;
   final String text;
   final bool active;
+
   @override
   Widget build(BuildContext context) {
     return MaterialButton(

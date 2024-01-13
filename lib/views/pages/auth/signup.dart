@@ -92,7 +92,7 @@ class Signup extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  controller.gotologin();
+                  controller.gotoLogin(context);
                 },
                 child: Container(
                     decoration: const BoxDecoration(
